@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import SosGlobe from "../components/SosGlobe";
+import BottomNav from "../components/BottomNav";
 import {
   Heart,
   Globe2,
@@ -34,7 +35,7 @@ const content = {
     subtitle:
       "SOS is a global humanitarian platform with verified cases, crisis cards, donations, volunteers and transparent reports.",
     button: "Start helping",
-    globe: "Interactive SOS Globe",
+    globe: "Cinematic SOS Globe",
     urgent: "Urgent cases",
     raised: "Raised",
     donate: "Donate",
@@ -48,7 +49,7 @@ const content = {
     subtitle:
       "SOS — глобальная гуманитарная платформа с проверенными кейсами, донатами, волонтёрами и прозрачной отчётностью.",
     button: "Начать помогать",
-    globe: "Интерактивный SOS-глобус",
+    globe: "Кинематографичный SOS-глобус",
     urgent: "Срочные кейсы",
     raised: "Собрано",
     donate: "Помочь",
@@ -62,7 +63,7 @@ const content = {
     subtitle:
       "SOS — глобальна гуманітарна платформа з перевіреними кейсами, донатами, волонтерами та прозорою звітністю.",
     button: "Почати допомагати",
-    globe: "Інтерактивний SOS-глобус",
+    globe: "Кінематографічний SOS-глобус",
     urgent: "Термінові кейси",
     raised: "Зібрано",
     donate: "Допомогти",
@@ -76,7 +77,7 @@ const content = {
     subtitle:
       "SOS es una plataforma humanitaria global con casos verificados, donaciones, voluntarios e informes transparentes.",
     button: "Empezar a ayudar",
-    globe: "Globo SOS interactivo",
+    globe: "Globo SOS cinematográfico",
     urgent: "Casos urgentes",
     raised: "Recaudado",
     donate: "Donar",
@@ -90,7 +91,7 @@ const content = {
     subtitle:
       "SOS je globální humanitární platforma s ověřenými případy, dary, dobrovolníky a transparentními reporty.",
     button: "Začít pomáhat",
-    globe: "Interaktivní SOS glóbus",
+    globe: "Filmový SOS glóbus",
     urgent: "Naléhavé případy",
     raised: "Vybráno",
     donate: "Darovat",
@@ -104,7 +105,7 @@ const content = {
     subtitle:
       "SOS to globalna platforma humanitarna ze zweryfikowanymi sprawami, darowiznami, wolontariuszami i przejrzystymi raportami.",
     button: "Zacznij pomagać",
-    globe: "Interaktywny glob SOS",
+    globe: "Filmowy glob SOS",
     urgent: "Pilne sprawy",
     raised: "Zebrano",
     donate: "Wesprzyj",
@@ -118,7 +119,7 @@ const content = {
     subtitle:
       "SOS ist eine globale humanitäre Plattform mit verifizierten Fällen, Spenden, Freiwilligen und transparenten Berichten.",
     button: "Jetzt helfen",
-    globe: "Interaktiver SOS-Globus",
+    globe: "Cinematic SOS Globe",
     urgent: "Dringende Fälle",
     raised: "Gesammelt",
     donate: "Spenden",
@@ -132,7 +133,7 @@ const content = {
     subtitle:
       "SOS è una piattaforma umanitaria globale con casi verificati, donazioni, volontari e report trasparenti.",
     button: "Inizia ad aiutare",
-    globe: "Globo SOS interattivo",
+    globe: "Globo SOS cinematografico",
     urgent: "Casi urgenti",
     raised: "Raccolto",
     donate: "Dona",
@@ -146,7 +147,7 @@ const content = {
     subtitle:
       "SOS منصة إنسانية عالمية للحالات الموثقة، التبرعات، المتطوعين والتقارير الشفافة.",
     button: "ابدأ المساعدة",
-    globe: "كرة SOS تفاعلية",
+    globe: "كرة SOS سينمائية",
     urgent: "حالات عاجلة",
     raised: "تم جمعه",
     donate: "تبرع",
@@ -160,7 +161,7 @@ const content = {
     subtitle:
       "SOS एक वैश्विक मानवीय प्लेटफ़ॉर्म है जिसमें verified cases, donations, volunteers और transparent reports हैं।",
     button: "मदद शुरू करें",
-    globe: "Interactive SOS Globe",
+    globe: "Cinematic SOS Globe",
     urgent: "Urgent cases",
     raised: "Raised",
     donate: "Donate",
@@ -184,7 +185,7 @@ export default function Home() {
   return (
     <main
       dir={isRtl ? "rtl" : "ltr"}
-      className="min-h-screen overflow-hidden bg-[#f8fbff] text-[#07111f]"
+      className="min-h-screen overflow-hidden bg-[#f8fbff] pb-28 text-[#07111f]"
     >
       <section className="px-5 pt-6 pb-10">
         <header className="flex items-center justify-between">
@@ -316,6 +317,8 @@ export default function Home() {
           </p>
         </section>
       </section>
+
+      <BottomNav />
     </main>
   );
 }
