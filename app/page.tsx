@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import SosGlobe from "@/components/SosGlobe";
+import SosGlobe from "../components/SosGlobe";
 import {
   Heart,
   Globe2,
