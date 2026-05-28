@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import SosGlobe from "@/components/SosGlobe";
 import {
   Heart,
   Globe2,
@@ -10,7 +11,6 @@ import {
   ArrowRight,
   Languages,
   Flame,
-  HandHeart,
   MapPin
 } from "lucide-react";
 
@@ -34,7 +34,7 @@ const content = {
     subtitle:
       "SOS is a global humanitarian platform with verified cases, crisis cards, donations, volunteers and transparent reports.",
     button: "Start helping",
-    globe: "Cinematic SOS Globe",
+    globe: "Interactive SOS Globe",
     urgent: "Urgent cases",
     raised: "Raised",
     donate: "Donate",
@@ -48,7 +48,7 @@ const content = {
     subtitle:
       "SOS — глобальная гуманитарная платформа с проверенными кейсами, донатами, волонтёрами и прозрачной отчётностью.",
     button: "Начать помогать",
-    globe: "Кинематографичный SOS-глобус",
+    globe: "Интерактивный SOS-глобус",
     urgent: "Срочные кейсы",
     raised: "Собрано",
     donate: "Помочь",
@@ -62,7 +62,7 @@ const content = {
     subtitle:
       "SOS — глобальна гуманітарна платформа з перевіреними кейсами, донатами, волонтерами та прозорою звітністю.",
     button: "Почати допомагати",
-    globe: "Кінематографічний SOS-глобус",
+    globe: "Інтерактивний SOS-глобус",
     urgent: "Термінові кейси",
     raised: "Зібрано",
     donate: "Допомогти",
@@ -76,7 +76,7 @@ const content = {
     subtitle:
       "SOS es una plataforma humanitaria global con casos verificados, donaciones, voluntarios e informes transparentes.",
     button: "Empezar a ayudar",
-    globe: "Globo SOS cinematográfico",
+    globe: "Globo SOS interactivo",
     urgent: "Casos urgentes",
     raised: "Recaudado",
     donate: "Donar",
@@ -90,7 +90,7 @@ const content = {
     subtitle:
       "SOS je globální humanitární platforma s ověřenými případy, dary, dobrovolníky a transparentními reporty.",
     button: "Začít pomáhat",
-    globe: "Filmový SOS glóbus",
+    globe: "Interaktivní SOS glóbus",
     urgent: "Naléhavé případy",
     raised: "Vybráno",
     donate: "Darovat",
@@ -104,7 +104,7 @@ const content = {
     subtitle:
       "SOS to globalna platforma humanitarna ze zweryfikowanymi sprawami, darowiznami, wolontariuszami i przejrzystymi raportami.",
     button: "Zacznij pomagać",
-    globe: "Filmowy glob SOS",
+    globe: "Interaktywny glob SOS",
     urgent: "Pilne sprawy",
     raised: "Zebrano",
     donate: "Wesprzyj",
@@ -118,7 +118,7 @@ const content = {
     subtitle:
       "SOS ist eine globale humanitäre Plattform mit verifizierten Fällen, Spenden, Freiwilligen und transparenten Berichten.",
     button: "Jetzt helfen",
-    globe: "Cinematic SOS Globe",
+    globe: "Interaktiver SOS-Globus",
     urgent: "Dringende Fälle",
     raised: "Gesammelt",
     donate: "Spenden",
@@ -132,7 +132,7 @@ const content = {
     subtitle:
       "SOS è una piattaforma umanitaria globale con casi verificati, donazioni, volontari e report trasparenti.",
     button: "Inizia ad aiutare",
-    globe: "Globo SOS cinematografico",
+    globe: "Globo SOS interattivo",
     urgent: "Casi urgenti",
     raised: "Raccolto",
     donate: "Dona",
@@ -146,7 +146,7 @@ const content = {
     subtitle:
       "SOS منصة إنسانية عالمية للحالات الموثقة، التبرعات، المتطوعين والتقارير الشفافة.",
     button: "ابدأ المساعدة",
-    globe: "كرة SOS سينمائية",
+    globe: "كرة SOS تفاعلية",
     urgent: "حالات عاجلة",
     raised: "تم جمعه",
     donate: "تبرع",
@@ -160,7 +160,7 @@ const content = {
     subtitle:
       "SOS एक वैश्विक मानवीय प्लेटफ़ॉर्म है जिसमें verified cases, donations, volunteers और transparent reports हैं।",
     button: "मदद शुरू करें",
-    globe: "Cinematic SOS Globe",
+    globe: "Interactive SOS Globe",
     urgent: "Urgent cases",
     raised: "Raised",
     donate: "Donate",
@@ -179,7 +179,6 @@ const crisisCases = [
 export default function Home() {
   const [language, setLanguage] = useState<keyof typeof content>("EN");
   const t = content[language];
-
   const isRtl = useMemo(() => language === "AR", [language]);
 
   return (
@@ -232,10 +231,8 @@ export default function Home() {
             <span className="font-black">{t.globe}</span>
           </div>
 
-          <div className="relative mt-6 aspect-square rounded-full border border-cyan-300 bg-[radial-gradient(circle_at_30%_30%,#6ee7ff,#10345f_45%,#020617_80%)] shadow-[0_0_70px_rgba(56,189,248,0.65)]">
-            <span className="absolute left-[24%] top-[32%] h-4 w-4 animate-pulse rounded-full bg-red-500 shadow-[0_0_22px_#ef4444]" />
-            <span className="absolute right-[28%] top-[48%] h-3 w-3 animate-pulse rounded-full bg-yellow-300 shadow-[0_0_20px_#fde047]" />
-            <span className="absolute bottom-[30%] left-[44%] h-3 w-3 animate-pulse rounded-full bg-red-500 shadow-[0_0_20px_#ef4444]" />
+          <div className="relative mt-6">
+            <SosGlobe />
           </div>
 
           <div className="relative mt-5 grid grid-cols-3 gap-3 text-center">
