@@ -6,41 +6,37 @@ const hotspots = [
   {
     href: "/case/food",
     label: "Gaza",
-    title: "Food support",
-    className: "left-[56%] top-[43%] bg-red-500",
+    className: "left-[57%] top-[45%] bg-red-500 text-red-500"
   },
   {
     href: "/case/animals",
     label: "Ukraine",
-    title: "Animal rescue",
-    className: "left-[53%] top-[34%] bg-yellow-300",
+    className: "left-[52%] top-[33%] bg-yellow-300 text-yellow-300"
   },
   {
     href: "/case/health",
     label: "Sudan",
-    title: "Medical help",
-    className: "left-[54%] top-[56%] bg-cyan-400",
-  },
+    className: "left-[55%] top-[57%] bg-cyan-400 text-cyan-400"
+  }
 ];
 
 export default function WorldMapGlobe() {
   return (
     <div className="relative h-[430px] w-full overflow-hidden rounded-[2rem] bg-[#020617]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,#1e88e5_0%,#0b3b73_36%,#031225_68%,#020617_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_45%_35%,#2563eb_0%,#0b3b73_34%,#031225_68%,#020617_100%)]" />
 
       <div className="absolute left-1/2 top-1/2 h-[350px] w-[350px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full border border-cyan-300 shadow-[0_0_70px_rgba(34,211,238,0.55)]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_35%_28%,rgba(255,255,255,0.35),transparent_28%)]" />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg"
+          alt="World map"
+          className="absolute left-[-35%] top-[12%] h-[72%] w-[170%] opacity-70 invert sepia saturate-200 hue-rotate-[95deg]"
+        />
 
-        <div className="absolute inset-0 opacity-70">
-          <div className="absolute left-[13%] top-[24%] h-[105px] w-[75px] rounded-[70%_35%_55%_40%] bg-emerald-700/80 rotate-[-18deg]" />
-          <div className="absolute left-[25%] top-[43%] h-[135px] w-[55px] rounded-[50%_45%_70%_60%] bg-emerald-700/80 rotate-[12deg]" />
-          <div className="absolute left-[41%] top-[25%] h-[78px] w-[105px] rounded-[45%_60%_45%_55%] bg-emerald-700/80 rotate-[5deg]" />
-          <div className="absolute left-[49%] top-[38%] h-[130px] w-[85px] rounded-[55%_40%_55%_70%] bg-emerald-700/80 rotate-[-8deg]" />
-          <div className="absolute left-[65%] top-[43%] h-[120px] w-[135px] rounded-[55%_65%_45%_55%] bg-emerald-700/80 rotate-[8deg]" />
-          <div className="absolute left-[72%] top-[67%] h-[55px] w-[95px] rounded-[60%_40%_60%_40%] bg-emerald-700/80 rotate-[-12deg]" />
-        </div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_35%_28%,rgba(255,255,255,0.34),transparent_30%)]" />
 
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(0deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:34px_34px] opacity-40" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(0deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:34px_34px] opacity-35" />
+
+        <div className="absolute inset-0 rounded-full shadow-[inset_-55px_-30px_70px_rgba(0,0,0,0.55),inset_35px_20px_45px_rgba(255,255,255,0.08)]" />
 
         {hotspots.map((spot) => (
           <Link
@@ -49,7 +45,7 @@ export default function WorldMapGlobe() {
             className={`absolute ${spot.className} h-4 w-4 rounded-full shadow-[0_0_28px_currentColor]`}
           >
             <span className="absolute -left-3 -top-3 h-10 w-10 animate-ping rounded-full bg-current opacity-30" />
-            <span className="absolute left-5 top-[-10px] whitespace-nowrap rounded-full border border-white/20 bg-black/55 px-2 py-1 text-[10px] font-black text-white backdrop-blur">
+            <span className="absolute left-5 top-[-10px] whitespace-nowrap rounded-full border border-white/20 bg-black/60 px-2 py-1 text-[10px] font-black text-white backdrop-blur">
               {spot.label}
             </span>
           </Link>
