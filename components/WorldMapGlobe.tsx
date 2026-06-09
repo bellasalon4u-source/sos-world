@@ -17,6 +17,31 @@ const hotspots = [
     href: "/case/health",
     label: "Sudan",
     className: "left-[55%] top-[57%] bg-cyan-400 text-cyan-400"
+  },
+  {
+    href: "/case/children",
+    label: "India",
+    className: "left-[48%] top-[48%] bg-pink-400 text-pink-400"
+  },
+  {
+    href: "/case/water",
+    label: "Kenya",
+    className: "left-[44%] top-[55%] bg-green-400 text-green-400"
+  },
+  {
+    href: "/case/shelter",
+    label: "Brazil",
+    className: "left-[27%] top-[60%] bg-orange-400 text-orange-400"
+  },
+  {
+    href: "/case/earthquake",
+    label: "Turkey",
+    className: "left-[45%] top-[41%] bg-red-400 text-red-400"
+  },
+  {
+    href: "/case/fire",
+    label: "California",
+    className: "left-[18%] top-[42%] bg-orange-500 text-orange-500"
   }
 ];
 
@@ -26,6 +51,7 @@ export default function WorldMapGlobe() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_45%_35%,#2563eb_0%,#0b3b73_34%,#031225_68%,#020617_100%)]" />
 
       <div className="absolute left-1/2 top-1/2 h-[350px] w-[350px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full border border-cyan-300 shadow-[0_0_70px_rgba(34,211,238,0.55)]">
+
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg"
           alt="World map"
@@ -38,6 +64,11 @@ export default function WorldMapGlobe() {
 
         <div className="absolute inset-0 rounded-full shadow-[inset_-55px_-30px_70px_rgba(0,0,0,0.55),inset_35px_20px_45px_rgba(255,255,255,0.08)]" />
 
+        <div className="absolute left-[20%] top-[42%] h-[2px] w-[180px] rotate-[8deg] bg-cyan-400/40" />
+        <div className="absolute left-[44%] top-[42%] h-[2px] w-[110px] rotate-[25deg] bg-cyan-400/40" />
+        <div className="absolute left-[44%] top-[54%] h-[2px] w-[140px] rotate-[-12deg] bg-cyan-400/40" />
+        <div className="absolute left-[28%] top-[60%] h-[2px] w-[180px] rotate-[-20deg] bg-cyan-400/40" />
+
         {hotspots.map((spot) => (
           <Link
             key={spot.label}
@@ -45,6 +76,7 @@ export default function WorldMapGlobe() {
             className={`absolute ${spot.className} h-4 w-4 rounded-full shadow-[0_0_28px_currentColor]`}
           >
             <span className="absolute -left-3 -top-3 h-10 w-10 animate-ping rounded-full bg-current opacity-30" />
+
             <span className="absolute left-5 top-[-10px] whitespace-nowrap rounded-full border border-white/20 bg-black/60 px-2 py-1 text-[10px] font-black text-white backdrop-blur">
               {spot.label}
             </span>
@@ -54,17 +86,22 @@ export default function WorldMapGlobe() {
 
       <div className="absolute left-4 right-4 top-4 flex items-center justify-between">
         <div>
-          <div className="text-xs font-black text-cyan-300">SOS WORLD MAP</div>
-          <div className="text-xl font-black text-white">Live crisis hotspots</div>
+          <div className="text-xs font-black text-cyan-300">
+            SOS WORLD MAP
+          </div>
+
+          <div className="text-xl font-black text-white">
+            Live crisis hotspots
+          </div>
         </div>
 
         <div className="rounded-full bg-red-500 px-3 py-1 text-xs font-black text-white">
-          LIVE
+          LIVE • 142 CASES
         </div>
       </div>
 
       <div className="absolute bottom-4 left-4 right-4 rounded-2xl border border-white/10 bg-white/10 p-4 text-sm font-bold text-cyan-100 backdrop-blur">
-        Tap Ukraine, Gaza or Sudan to open a verified case.
+        Tap any hotspot to open a verified humanitarian case.
       </div>
     </div>
   );
